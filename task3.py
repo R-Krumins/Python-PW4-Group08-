@@ -2,7 +2,7 @@ import re
 
 def getLetterFrequency(file):
     #extract all letters from file
-    data = re.findall('[a-z]', open(file).read().lower())
+    data = re.findall('[a-zāčēģīķļņšūž]', open(file, encoding='UTF-8').read().lower())
     
     #count frequency of letters, put result in a dictionary
     letters = dict()
@@ -19,9 +19,11 @@ def getLetterFrequency(file):
 
 
 
-letters = getLetterFrequency('bee-movie-script.txt')
-      
-for k,v in letters.items():
-    print('{}: {}%'.format(k, v))
+lv = getLetterFrequency('bee-movie-script-LV.txt')
+eng = getLetterFrequency('bee-movie-script-ENG.txt')
+
+print('English:  Latvian:')
+for (k,v), (k2,v2) in zip(eng.items(), lv.items()):
+    print('{}: {}%  {}: {}%'.format(k, v, k2, v2))
 
 
