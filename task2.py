@@ -1,6 +1,6 @@
 import os
 # insert working directory here:
-os.chdir("C:\\Users\\...")
+#os.chdir("C:\\Users\\...")
 
 fhand = open('mbox-short.txt').readlines()
 
@@ -24,12 +24,7 @@ def count_domains(file = fhand):
 
 def display_histogram(cdict):
     for k, v in sorted(cdict.items()):
-        print(k + ": " + str(v), end=' ')
-        i = 0
-        while i <= v:
-            print('*', end='')
-            i+=1
-        print()
+        print('{:>20}: {:>2} {}'.format(k,v,'*'*v))
 
 print('SORTED:') 
 cdict = count_domains(fhand)

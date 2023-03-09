@@ -22,8 +22,8 @@ def getLetterFrequency(file):
 lv = getLetterFrequency('bee-movie-script-LV.txt')
 eng = getLetterFrequency('bee-movie-script-ENG.txt')
 
-print('English:  Latvian:')
+print('English:{}Latvian:'.format(' '*5))
 for (k,v), (k2,v2) in zip(eng.items(), lv.items()):
-    print('{}: {}%  {}: {}%'.format(k, v, k2, v2))
+    print('{}: {:>4}%{}{}: {:>4}%'.format(k, v,' '*5, k2, v2))
 
 
